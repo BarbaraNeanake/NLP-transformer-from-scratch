@@ -8,11 +8,13 @@
 
 ---
 
-Pada intinya, project ini mengimplementasikan arsitektur decoder-only Transformer (GPT-style) dari nol hanya menggunakan NumPy. Tujuannya sebenarnya lahir dari keluhan saya sebagai asdos yang sering menerima banyak pertanyaan sama berulang kali dari mahasiswa, terutama mendekati masa ujian. Nah, lewat tugas ini, saya membuat prototipe "Smart AsDos" yang dapat mengklasifikasikan pertanyaan umum mahasiswa (seperti deadline, tugas kelompok, dll.) untuk automate jawaban.
+Sebagai asisten dosen, saya sering menerima pertanyaan serupa dari mahasiswa menjelang ujian, mulai dari jadwal, tenggat tugas, hingga aturan kelompok. Lama-lama saya penasaran, bagaimana jika sistem bisa mengenali pola pertanyaan seperti itu dan menjawabnya otomatis? Kebetulan pada mata kuliah ini saya mendapat tugas untuk mengimplementasikan decoder-only Transformer (GPT-style) dari nol, jadi saya sekalian menjadikannya tools untuk belajar sekaligus bereksperimen. Dengan **membangun seluruh komponennya sendiri menggunakan NumPy**, mulai dari embedding, sinusoidal positional encoding, multi-head attention, hingga causal masking, saya belajar bagaimana model bahasa benar-benar memproses teks dan menghasilkan prediksi kategori pertanyaan maupun respons yang sesuai.
 
-<img width="581" height="340" alt="image" src="https://github.com/user-attachments/assets/ac9779d0-e360-4746-8faa-f179a94d5149" />
-<img width="501" height="201" alt="image" src="https://github.com/user-attachments/assets/bb8a254f-67ea-47dd-9941-2ad19a1e908d" />
+Agar lebih jelas, saya menggunakan vocabulary berupa kumpulan kata yang mungkin muncul dalam konteks tanya-jawab (misalnya: kapan, tugas, deadline, kelompok, dll). Dari sini, kita bisa melihat bagaimana model memperhatikan hubungan antar-kata lewat visualisasi perhatian (attention) di berbagai layer berikut:
 
+<p align="center"> <img width="600" alt="attention-heatmap" src="https://github.com/user-attachments/assets/ac9779d0-e360-4746-8faa-f179a94d5149" /> <img width="600" alt="attention-plot" src="https://github.com/user-attachments/assets/bb8a254f-67ea-47dd-9941-2ad19a1e908d" /> </p>
+
+Untuk mengetahui lebih lanjut tentang implementasi detailnya, silakan cek notebook di Google Colab atau file yang ada di repositori ini :D
 
 ---
 
